@@ -68,3 +68,46 @@ public void keyReleased() {
     }
   }
 }
+
+public class Asteroid extends Floater {
+  private double rotSpeed;
+  private double moveSpeed;
+
+public Asteroid() {
+   corners = 6;
+   xCorners = new int[corners];
+   yCorners = new int[corners];
+   xCorners[0] = -11;
+   yCorners[0] = -8;
+   xCorners[1] = 7;
+   yCorners[1] = -8;
+   xCorners[2] = 13;
+   yCorners[2] = 0;
+   xCorners[3] = 6;
+   yCorners[3] = 10;
+   xCorners[4] = -11;
+   yCorners[4] = 8;
+   xCorners[5] = -5;
+   yCorners[5] = 0;
+   myColor = color(255);
+   rotSpeed = (float) (Math.random() * 6 - 3); 
+   moveSpeed = (float) (Math.random() * 3); 
+   myCenterX = (float) (Math.random() * width);
+   myCenterY = (float) (Math.random() * height);
+   myPointDirection = (float) (Math.random() * 360);
+   double randomSpeed = Math.random() * 3; 
+   myXspeed = (float) (randomSpeed * Math.cos(Math.toRadians(myPointDirection)));
+   myYspeed = (float) (randomSpeed * Math.sin(Math.toRadians(myPointDirection)));
+  }
+
+  public void move() {
+    myCenterX += moveSpeed;
+    myCenterY += moveSpeed;
+    turn(rotSpeed);
+  }
+
+  public void show() {
+    noFill();
+    super.show();
+  }
+}
