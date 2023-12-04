@@ -20,4 +20,8 @@ class Spaceship extends Floater{
     myPointDirection=0;
     
   }
+  public boolean collidesWith(Asteroid asteroid) {
+  float distance = dist((float)myCenterX, (float)myCenterY, (float)asteroid.myCenterX, (float)asteroid.myCenterY);
+  return distance < 20;
+}
  }
