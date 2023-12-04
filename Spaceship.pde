@@ -12,7 +12,7 @@ class Spaceship extends Floater{
     yCorners[2]=9;
     xCorners[3]=-2;
     yCorners[3]=0;
-    myColor=color(255,255,255);
+    myColor=color(188,205,255);
     myCenterX=50;
     myCenterY=50;
     myXspeed=0;
@@ -23,5 +23,5 @@ class Spaceship extends Floater{
   public boolean collidesWith(Asteroid asteroid) {
   float distance = dist((float)myCenterX, (float)myCenterY, (float)asteroid.myCenterX, (float)asteroid.myCenterY);
   return distance < 20;
-}
+  }
  }
