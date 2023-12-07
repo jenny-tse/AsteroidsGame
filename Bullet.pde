@@ -4,8 +4,8 @@ class Bullet extends Floater {
    myCenterX = theShip.myCenterX;
    myCenterY = theShip.myCenterY;
    myPointDirection = theShip.myPointDirection;
-   myXspeed = 5 * Math.cos(Math.toRadians(myPointDirection));
-   myYspeed = 5 * Math.sin(Math.toRadians(myPointDirection));
+   myXspeed = 5 * Math.cos((Math.PI/180)*myPointDirection);
+   myYspeed = 5 * Math.sin((Math.PI/180)*myPointDirection);
   }
  public boolean collidesWith(Asteroid asteroid) {
     float distance = dist((float) myCenterX, (float) myCenterY, (float) asteroid.myCenterX, (float) asteroid.myCenterY);
